@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <form
+      onsubmit="w=window.open(location.href, '_blank');w.secretSearchValue=this.name.value;return false;"
+    >
+      <input type="search" name="name" autofocus />
+      <input type="submit" />
+    </form>
+
+    <script>
+      const searchValue = window.secretSearchValue;
+      if (searchValue) {
+        document.body.innerHTML = `<h1>${searchValue}</h1>`;
+      }
+    </script>
+  </body>
+</html>
